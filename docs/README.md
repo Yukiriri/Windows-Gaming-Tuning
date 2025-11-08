@@ -1,6 +1,5 @@
-# Windows-Gaming-Experience
+# Windows-Gaming-Tuning
 一份对Windows游戏的CPU性能、丝滑度、跟手等因素的研究心得  
-AMD和Intel通用，台式和笔记本也通用  
 
 > [!IMPORTANT]
 > 全文提到的cmd命令都需要管理员身份运行  
