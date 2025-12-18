@@ -28,7 +28,7 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 
 - 修改方法  
   下载和管理员运行[`set-sys-tick.bat`](../bin/set-sys-tick.bat)
-- 恢复修改  
+- 还原修改  
   下载和管理员运行[`restore-sys-tick.bat`](../bin/restore-sys-tick.bat)
 
 > [!IMPORTANT]  
@@ -43,7 +43,7 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 
 - 修改方法  
   下载和管理员运行[`set-mpo-disabled.bat`](../bin/set-mpo-disabled.bat)
-- 恢复修改  
+- 还原修改  
   下载和管理员运行[`restore-mpo-default.bat`](../bin/restore-mpo-default.bat)
 
 > [!IMPORTANT]  
@@ -57,7 +57,7 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 
 - 修改方法  
   下载和管理员运行[`set-mouse-speed.bat`](../bin/set-mouse-speed.bat)
-- 恢复修改  
+- 还原修改  
   下载和管理员运行[`restore-mouse-speed.bat`](../bin/restore-mouse-speed.bat)
 
 > [!NOTE]  
@@ -68,7 +68,7 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 
 - 修改方法  
   下载和管理员运行[`set-fgbg-scheduling.bat`](../bin/set-fgbg-scheduling.bat)
-- 恢复修改  
+- 还原修改  
   下载和管理员运行[`restore-fgbg-scheduling.bat`](../bin/restore-fgbg-scheduling.bat)
 
 <details>
