@@ -1,6 +1,16 @@
 # Windows-Gaming-Tuning
 一份对Windows游戏的CPU性能、丝滑度、跟手等因素的研究心得  
 
+[set-rtc-disabled.bat]: ../bin/set-rtc-disabled.bat
+[restore-rtc-default.bat]: ../bin/restore-rtc-default.bat
+[set-mpo-disabled.bat]: ../bin/set-mpo-disabled.bat
+[restore-mpo-default.bat]: ../bin/restore-mpo-default.bat
+[set-mouseacceleration-off.bat]: ../bin/set-mouseacceleration-off.bat
+[restore-mouseacceleration-default.bat]: ../bin/restore-mouseacceleration-default.bat
+[set-fgbg-var31.bat]: ../bin/set-fgbg-var31.bat
+[set-fgbg-fix31.bat]: ../bin/set-fgbg-fix31.bat
+[restore-fgbg-default.bat]: ../bin/restore-fgbg-default.bat
+
 ## 系统版本建议
 请查看(https://learn.microsoft.com/windows-hardware/design/minimum/windows-processor-requirements)  
 然后按照自己的CPU最高可用的Windows版本选择  
@@ -27,9 +37,9 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 如果要用超过1000HZ的鼠标，强烈建议阻止RTC  
 
 - 修改方法  
-  下载和管理员运行[`set-rtc-disabled.bat`](../bin/set-rtc-disabled.bat)
+  下载和管理员运行[set-rtc-disabled.bat]
 - 还原修改  
-  下载和管理员运行[`restore-rtc-default.bat`](../bin/restore-rtc-default.bat)
+  下载和管理员运行[restore-rtc-default.bat]
 
 > [!IMPORTANT]  
 > 需要重启生效  
@@ -42,9 +52,9 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 关闭这个功能可以缓解  
 
 - 修改方法  
-  下载和管理员运行[`set-mpo-disabled.bat`](../bin/set-mpo-disabled.bat)
+  下载和管理员运行[set-mpo-disabled.bat]
 - 还原修改  
-  下载和管理员运行[`restore-mpo-default.bat`](../bin/restore-mpo-default.bat)
+  下载和管理员运行[restore-mpo-default.bat]
 
 > [!IMPORTANT]  
 > 需要重启生效  
@@ -56,9 +66,9 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 这是一套大幅影响鼠标手感的修改，推荐FPS选手  
 
 - 修改方法  
-  下载和管理员运行[`set-mouseacceleration-off.bat`](../bin/set-mouseacceleration-off.bat)
+  下载和管理员运行[set-mouseacceleration-off.bat]
 - 还原修改  
-  下载和管理员运行[`restore-mouseacceleration-default.bat`](../bin/restore-mouseacceleration-default.bat)
+  下载和管理员运行[restore-mouseacceleration-default.bat]
 
 > [!NOTE]  
 > 运行一次即整个系统永久保持，不需要加入开机自启  
@@ -67,10 +77,10 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 这是一套细微影响鼠标手感的修改，推荐FPS选手  
 
 - 修改方法  
-  下载和管理员运行[`set-fgbg-var31.bat`](../bin/set-fgbg-var31.bat)
-  或者下载和管理员运行[`set-fgbg-fix31.bat`](../bin/set-fgbg-fix31.bat)
+  下载和管理员运行[set-fgbg-var31.bat]  
+  或者下载和管理员运行[set-fgbg-fix31.bat]  
 - 还原修改  
-  下载和管理员运行[`restore-fgbg-default.bat`](../bin/restore-fgbg-default.bat)
+  下载和管理员运行[restore-fgbg-default.bat]
 
 <details>
 <summary>Win32PrioritySeparation二进制位解释</summary>
@@ -87,8 +97,8 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 - 二进制`101010`表示`固定短3:1`调度，对应十六进制`2a`，十进制`42`
 
 建议：
-- 低灵敏度玩家使用`22`
-- 高灵敏度玩家使用`42`
+- 低灵敏度玩家使用`22`（[set-fgbg-var31.bat]）
+- 高灵敏度玩家使用`42`（[set-fgbg-fix31.bat]）
 
 </details>
 
