@@ -27,9 +27,9 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 如果要用超过1000HZ的鼠标，强烈建议阻止RTC  
 
 - 修改方法  
-  下载和管理员运行[`set-sys-tick.bat`](../bin/set-sys-tick.bat)
+  下载和管理员运行[`set-rtc-disabled.bat`](../bin/set-rtc-disabled.bat)
 - 还原修改  
-  下载和管理员运行[`restore-sys-tick.bat`](../bin/restore-sys-tick.bat)
+  下载和管理员运行[`restore-rtc-default.bat`](../bin/restore-rtc-default.bat)
 
 > [!IMPORTANT]  
 > 需要重启生效  
@@ -39,7 +39,7 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 
 ## 关闭MPO
 系统的MPO功能会在游戏高GPU负载时影响低GPU负载程序的画面更新，出现画面残留等  
-关闭这个功能应该可以缓解  
+关闭这个功能可以缓解  
 
 - 修改方法  
   下载和管理员运行[`set-mpo-disabled.bat`](../bin/set-mpo-disabled.bat)
@@ -56,9 +56,9 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 这是一套大幅影响鼠标手感的修改，推荐FPS选手  
 
 - 修改方法  
-  下载和管理员运行[`set-mouse-speed.bat`](../bin/set-mouse-speed.bat)
+  下载和管理员运行[`set-mouseacceleration-off.bat`](../bin/set-mouseacceleration-off.bat)
 - 还原修改  
-  下载和管理员运行[`restore-mouse-speed.bat`](../bin/restore-mouse-speed.bat)
+  下载和管理员运行[`restore-mouseacceleration-default.bat`](../bin/restore-mouseacceleration-default.bat)
 
 > [!NOTE]  
 > 运行一次即整个系统永久保持，不需要加入开机自启  
@@ -67,9 +67,10 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 这是一套细微影响鼠标手感的修改，推荐FPS选手  
 
 - 修改方法  
-  下载和管理员运行[`set-fgbg-scheduling.bat`](../bin/set-fgbg-scheduling.bat)
+  下载和管理员运行[`set-fgbg-var31.bat`](../bin/set-fgbg-var31.bat)
+  或者下载和管理员运行[`set-fgbg-fix31.bat`](../bin/set-fgbg-fix31.bat)
 - 还原修改  
-  下载和管理员运行[`restore-fgbg-scheduling.bat`](../bin/restore-fgbg-scheduling.bat)
+  下载和管理员运行[`restore-fgbg-default.bat`](../bin/restore-fgbg-default.bat)
 
 <details>
 <summary>Win32PrioritySeparation二进制位解释</summary>
@@ -82,12 +83,12 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 | 数值作用 | 10 = 短   | 10 = 固定  | 10 = 3:1       |
 
 举例：
-- 二进制`010110`表示`可变长3:1`调度，对应十进制`22`，十六进制`16`
-- 二进制`101010`表示`固定短3:1`调度，对应十进制`42`，十六进制`2a`
+- 二进制`010110`表示`可变长3:1`调度，对应十六进制`16`，十进制`22`
+- 二进制`101010`表示`固定短3:1`调度，对应十六进制`2a`，十进制`42`
 
 建议：
-- 低灵敏度玩家使用`16`
-- 高灵敏度玩家使用`2a`
+- 低灵敏度玩家使用`22`
+- 高灵敏度玩家使用`42`
 
 </details>
 
