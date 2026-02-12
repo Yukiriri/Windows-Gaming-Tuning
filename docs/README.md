@@ -1,17 +1,6 @@
 # Windows-Gaming-Tuning
 一份对Windows游戏的CPU性能、丝滑度、跟手等因素的研究心得  
 
-[set-tsc-accurate.bat]: ../bin/set-tsc-accurate.bat
-[set-tsc-fast.bat]: ../bin/set-tsc-fast.bat
-[restore-tsc-default.bat]: ../bin/restore-tsc-default.bat
-[set-mpo-disabled.bat]: ../bin/set-mpo-disabled.bat
-[restore-mpo-default.bat]: ../bin/restore-mpo-default.bat
-[set-mouseacceleration-off.bat]: ../bin/set-mouseacceleration-off.bat
-[restore-mouseacceleration-default.bat]: ../bin/restore-mouseacceleration-default.bat
-[set-fgbgscheduling-fix31.bat]: ../bin/set-fgbgscheduling-fix31.bat
-[set-fgbgscheduling-var31.bat]: ../bin/set-fgbgscheduling-var31.bat
-[restore-fgbgscheduling-default.bat]: ../bin/restore-fgbgscheduling-default.bat
-
 ## 系统版本建议
 请查看(https://learn.microsoft.com/windows-hardware/design/minimum/windows-processor-requirements)  
 然后按照自己的CPU最高可用的Windows版本选择  
@@ -36,6 +25,10 @@
 `RTC`会明显拖慢游戏的可用算力，但是Windows对鼠标轨迹定位的计算更依赖`RTC`  
 这里提供2种方案给不同侧重的玩家选择  
 
+[set-tsc-accurate.bat]: ../bin/set-tsc-accurate.bat
+[set-tsc-fast.bat]: ../bin/set-tsc-fast.bat
+[restore-tsc-default.bat]: ../bin/restore-tsc-default.bat
+
 - 修改方法  
   - `准确鼠标轨迹`：下载和管理员运行[set-tsc-accurate.bat]  
   - `高性能Tick`：下载和管理员运行[set-tsc-fast.bat]  
@@ -52,6 +45,9 @@
 系统的MPO功能会在游戏高GPU负载时影响低GPU负载程序的画面更新，出现画面残留等  
 关闭这个功能可以缓解  
 
+[set-mpo-disabled.bat]: ../bin/set-mpo-disabled.bat
+[restore-mpo-default.bat]: ../bin/restore-mpo-default.bat
+
 - 修改方法  
   下载和管理员运行[set-mpo-disabled.bat]  
 - 还原修改  
@@ -67,6 +63,9 @@
 这是一套大幅影响鼠标手感的修改，推荐FPS选手  
 如果你玩的游戏不支持`原始鼠标输入`，这个修改就可以消除游戏里的鼠标漂移带来的奇怪鼠标手感  
 
+[set-mouseacceleration-off.bat]: ../bin/set-mouseacceleration-off.bat
+[restore-mouseacceleration-default.bat]: ../bin/restore-mouseacceleration-default.bat
+
 - 修改方法  
   下载和管理员运行[set-mouseacceleration-off.bat]  
 - 还原修改  
@@ -78,11 +77,18 @@
 ## 修改前后台调度运作
 这是一套细微影响鼠标手感的修改，推荐FPS选手  
 
+[set-fgbgscheduling-fix31.bat]: ../bin/set-fgbgscheduling-fix31.bat
+[set-fgbgscheduling-var31.bat]: ../bin/set-fgbgscheduling-var31.bat
+[restore-fgbgscheduling-default.bat]: ../bin/restore-fgbgscheduling-default.bat
+
 - 修改方法  
   - `低灵敏度玩家`：下载和管理员运行[set-fgbgscheduling-fix31.bat]  
   - `高灵敏度玩家`：下载和管理员运行[set-fgbgscheduling-var31.bat]  
 - 还原修改  
   下载和管理员运行[restore-fgbgscheduling-default.bat]  
+
+> [!NOTE]  
+> 运行一次即整个系统永久保持，不需要加入开机自启  
 
 <details>
 <summary>Win32PrioritySeparation二进制位解释</summary>
@@ -99,9 +105,6 @@
 - 二进制`101010`表示`固定短3:1`调度，对应十六进制`2a`，十进制`42`
 
 </details>
-
-> [!NOTE]  
-> 运行一次即整个系统永久保持，不需要加入开机自启  
 
 ## Credits
 - https://sites.google.com/view/melodystweaks/misconceptions-about-timers-hpet-tsc-pmt
