@@ -37,8 +37,8 @@
 这里提供2种方案给不同侧重的玩家选择  
 
 - 修改方法  
-  `准确鼠标轨迹`：下载和管理员运行[set-tsc-accurate.bat]  
-  `高性能Tick`：下载和管理员运行[set-tsc-fast.bat]  
+  - `准确鼠标轨迹`：下载和管理员运行[set-tsc-accurate.bat]  
+  - `高性能Tick`：下载和管理员运行[set-tsc-fast.bat]  
 - 还原修改  
   下载和管理员运行[restore-tsc-default.bat]  
 
@@ -79,8 +79,8 @@
 这是一套细微影响鼠标手感的修改，推荐FPS选手  
 
 - 修改方法  
-  下载和管理员运行[set-fgbgscheduling-fix31.bat]  
-  或者下载和管理员运行[set-fgbgscheduling-var31.bat]  
+  - `低灵敏度玩家`：下载和管理员运行[set-fgbgscheduling-fix31.bat]  
+  - `高灵敏度玩家`：下载和管理员运行[set-fgbgscheduling-var31.bat]  
 - 还原修改  
   下载和管理员运行[restore-fgbgscheduling-default.bat]  
 
@@ -97,10 +97,6 @@
 举例：
 - 二进制`010110`表示`可变长3:1`调度，对应十六进制`16`，十进制`22`
 - 二进制`101010`表示`固定短3:1`调度，对应十六进制`2a`，十进制`42`
-
-建议：
-- 低灵敏度玩家使用`42`：[set-fgbgscheduling-fix31.bat]
-- 高灵敏度玩家使用`22`：[set-fgbgscheduling-var31.bat]
 
 </details>
 
