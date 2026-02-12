@@ -1,15 +1,16 @@
 # Windows-Gaming-Tuning
 一份对Windows游戏的CPU性能、丝滑度、跟手等因素的研究心得  
 
-[set-rtc-disabled.bat]: ../bin/set-rtc-disabled.bat
-[restore-rtc-default.bat]: ../bin/restore-rtc-default.bat
+[set-tsc-accurate.bat]: ../bin/set-tsc-accurate.bat
+[set-tsc-fast.bat]: ../bin/set-tsc-fast.bat
+[restore-tsc-default.bat]: ../bin/restore-tsc-default.bat
 [set-mpo-disabled.bat]: ../bin/set-mpo-disabled.bat
 [restore-mpo-default.bat]: ../bin/restore-mpo-default.bat
 [set-mouseacceleration-off.bat]: ../bin/set-mouseacceleration-off.bat
 [restore-mouseacceleration-default.bat]: ../bin/restore-mouseacceleration-default.bat
-[set-fgbg-var31.bat]: ../bin/set-fgbg-var31.bat
-[set-fgbg-fix31.bat]: ../bin/set-fgbg-fix31.bat
-[restore-fgbg-default.bat]: ../bin/restore-fgbg-default.bat
+[set-fgbgscheduling-fix31.bat]: ../bin/set-fgbgscheduling-fix31.bat
+[set-fgbgscheduling-var31.bat]: ../bin/set-fgbgscheduling-var31.bat
+[restore-fgbgscheduling-default.bat]: ../bin/restore-fgbgscheduling-default.bat
 
 ## 系统版本建议
 请查看(https://learn.microsoft.com/windows-hardware/design/minimum/windows-processor-requirements)  
@@ -31,15 +32,15 @@
 - 优先选择拥有VRR以及低延迟技术的显示器  
 
 ## 改进系统Tick
-大部分程序在使用微秒单位的等待事件的时候，Windows默认会使用RTC  
-RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick精准性  
-有人说AMD骨骼动画卡顿是因为`Clock Stretching`的原因，但我的实验证明，罪魁祸首单纯是RTC  
-如果要用超过1000HZ的鼠标，强烈建议阻止RTC  
+经过长期的各种实测，有些竞技游戏一直在用旧的`RTC`作为Tick源  
+`RTC`会明显拖慢游戏的可用算力，但是Windows对鼠标轨迹定位的计算更依赖`RTC`  
+这里提供2种方案给不同侧重的玩家选择  
 
 - 修改方法  
-  下载和管理员运行[set-rtc-disabled.bat]
+  `准确鼠标轨迹`：下载和管理员运行[set-tsc-accurate.bat]  
+  `高性能Tick`：下载和管理员运行[set-tsc-fast.bat]  
 - 还原修改  
-  下载和管理员运行[restore-rtc-default.bat]
+  下载和管理员运行[restore-tsc-default.bat]  
 
 > [!IMPORTANT]  
 > 需要重启生效  
@@ -52,9 +53,9 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 关闭这个功能可以缓解  
 
 - 修改方法  
-  下载和管理员运行[set-mpo-disabled.bat]
+  下载和管理员运行[set-mpo-disabled.bat]  
 - 还原修改  
-  下载和管理员运行[restore-mpo-default.bat]
+  下载和管理员运行[restore-mpo-default.bat]  
 
 > [!IMPORTANT]  
 > 需要重启生效  
@@ -64,11 +65,12 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 
 ## 关闭鼠标增强指针精度
 这是一套大幅影响鼠标手感的修改，推荐FPS选手  
+如果你玩的游戏不支持`原始鼠标输入`，这个修改就可以消除游戏里的鼠标漂移带来的奇怪鼠标手感  
 
 - 修改方法  
-  下载和管理员运行[set-mouseacceleration-off.bat]
+  下载和管理员运行[set-mouseacceleration-off.bat]  
 - 还原修改  
-  下载和管理员运行[restore-mouseacceleration-default.bat]
+  下载和管理员运行[restore-mouseacceleration-default.bat]  
 
 > [!NOTE]  
 > 运行一次即整个系统永久保持，不需要加入开机自启  
@@ -77,10 +79,10 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 这是一套细微影响鼠标手感的修改，推荐FPS选手  
 
 - 修改方法  
-  下载和管理员运行[set-fgbg-var31.bat]  
-  或者下载和管理员运行[set-fgbg-fix31.bat]  
+  下载和管理员运行[set-fgbgscheduling-fix31.bat]  
+  或者下载和管理员运行[set-fgbgscheduling-var31.bat]  
 - 还原修改  
-  下载和管理员运行[restore-fgbg-default.bat]
+  下载和管理员运行[restore-fgbgscheduling-default.bat]  
 
 <details>
 <summary>Win32PrioritySeparation二进制位解释</summary>
@@ -97,8 +99,8 @@ RTC对CPU开销非常大，如果因此导致瓶颈，就会破坏游戏的Tick�
 - 二进制`101010`表示`固定短3:1`调度，对应十六进制`2a`，十进制`42`
 
 建议：
-- 低灵敏度玩家使用`22`（[set-fgbg-var31.bat]）
-- 高灵敏度玩家使用`42`（[set-fgbg-fix31.bat]）
+- 低灵敏度玩家使用`42`：[set-fgbgscheduling-fix31.bat]
+- 高灵敏度玩家使用`22`：[set-fgbgscheduling-var31.bat]
 
 </details>
 
