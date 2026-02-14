@@ -61,7 +61,7 @@
 
 ## 关闭鼠标增强指针精度
 这是一套大幅影响鼠标手感的修改，推荐FPS选手  
-如果你玩的游戏不支持`原始鼠标输入`，这个修改就可以消除游戏里的鼠标漂移带来的奇怪鼠标手感  
+如果你玩的游戏不支持`原始鼠标输入`，这个修改就可以消除鼠标加速带来的游戏里的奇怪鼠标手感  
 
 [set-mouseacceleration-off.bat]: ../bin/set-mouseacceleration-off.bat
 [restore-mouseacceleration-default.bat]: ../bin/restore-mouseacceleration-default.bat
